@@ -1,3 +1,4 @@
+<img src='https://s3-us-west-2.amazonaws.com/elixium-assets/Logo-Lined.png' style='display: inherit; background: #111;'/>
 <h1>{{ site.title }}</h1>
 <ul id='links'>
   {% for post in site.posts %}
@@ -9,7 +10,7 @@
   <li><h2>{{ category | first }}</h2>
     <ul>
     {% for posts in category %}
-      {% for post in posts %}        
+      {% for post in posts %}
         <li class='{{ post.type }}'><a href='#{{ post.url }}'>{{ post.title }}</a></li>
       {% endfor %}
     {% endfor %}

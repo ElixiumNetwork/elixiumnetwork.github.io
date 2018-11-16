@@ -23,6 +23,11 @@ summary {
     display: block;
 }
 
+@font-face {
+  font-family: 'Museo';
+  src: url('./Museo.otf') format('opentype');
+}
+
 /**
  * Correct `inline-block` display not defined in IE 8/9.
  */
@@ -62,7 +67,7 @@ audio:not([controls]) {
  */
 
 html {
-    font-family: sans-serif; /* 1 */
+    font-family: 'Museo', sans-serif; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     -ms-text-size-adjust: 100%; /* 2 */
 }
@@ -411,16 +416,16 @@ body {
 body,
 input,
 textarea {
-  color: #191919;
-  font: 14px/140% 'Open Sans', Arial, sans-serif;
+  color: #1b1b1b;
+  font: 14px/140% 'Museo', 'Open Sans', Arial, sans-serif;
 }
 
 a {
-  color: #119bdf;
+  color: #2CBFC7;
   text-decoration: none;
 }
 a:hover {
-  color: #29aeef;
+  color: #45EDAA;
   text-decoration: underline;
 }
 
@@ -455,6 +460,8 @@ code {
   font-size: 14px;
   margin: 0;
   padding: 20px;
+  padding-top: 0px;
+  text-align: center;
 }
 
 #sidebar h2 {
