@@ -7,12 +7,35 @@ layout: default
 </nav>
 
 <section id='content'>
-{% for post in site.posts %}
-  <article class='{{ post.type }}'>
-    <a name='{{ post.url }}' href='#{{ post.url }}'><h2>{% if post.type %}<code><b>{{ post.type }}</b> {{ post.path }}</code> {% endif %}{{ post.title }}</h2></a>
-    <section class='body'>
-      {{ post.content }}
-    </section>
-  </article>
-{% endfor %}
+	<div class="overview">
+		<p>
+	    This Developer Guide aims to provide a technical reference and all the
+			information you need to understand Elixium and start contributing to
+			Elixium or to build Elixium-based applications, but is not a
+			<a href=''>Decentralized Application Development Guide</a>, and is also
+			<a href=''>not a specification</a>. This guide is best supplemented by
+			having the <a href='https://github.com/ElixiumNetwork/elixium_core' target='_blank'>Elixium Core Source</a>
+			installed locally.
+	  </p>
+		<p>
+			Questions about Elixium development are best asked in the
+			<a href='https://t.me/elixiumnetwork' target='_blank'>Telegram Channel</a>. Errors or
+			suggestions for this documentation can be
+			<a href='https://github.com/ElixiumNetwork/elixiumnetwork.github.io/issues' target='_blank'>submitted as an issue.</a>
+		</p>
+		<p>
+			In the following documentation, some strings have been shortened or wrapped:
+			“[…]” indicates extra data was removed, and lines ending in a single
+			backslash “\” are continued below.
+		</p>
+	</div>
+
+	{% for post in site.posts %}
+	  <article class='{{ post.type }}'>
+	    <a name='{{ post.url }}' href='#{{ post.url }}'><h2>{% if post.type %}<code><b>{{ post.type }}</b> {{ post.path }}</code> {% endif %}{{ post.title }}</h2></a>
+	    <section class='body'>
+	      {{ post.content }}
+	    </section>
+	  </article>
+	{% endfor %}
 </section>

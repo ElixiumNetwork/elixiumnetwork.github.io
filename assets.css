@@ -220,6 +220,7 @@ sub {
 
 img {
     border: 0;
+    width: 100%;
 }
 
 /**
@@ -441,7 +442,7 @@ code {
 #sidebar {
   background: #191919;
   color: #fff;
-  float: left;  
+  float: left;
   height: 100%;
   overflow: auto;
   position: fixed;
@@ -454,7 +455,6 @@ code {
   font-size: 14px;
   margin: 0;
   padding: 20px;
-  text-transform: uppercase;
 }
 
 #sidebar h2 {
@@ -514,6 +514,12 @@ code {
   padding: 20px;
   padding-left: 260px;
   max-width: 700px;
+}
+
+#content .overview {
+  font-size: 16px;
+  margin-top: 30px;
+  line-height: 1.5;
 }
 
 #content .control {

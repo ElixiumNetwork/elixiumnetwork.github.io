@@ -42,7 +42,7 @@ code {
 #sidebar {
   background: #191919;
   color: #fff;
-  float: left;  
+  float: left;
   height: 100%;
   overflow: auto;
   position: fixed;
@@ -55,7 +55,6 @@ code {
   font-size: 14px;
   margin: 0;
   padding: 20px;
-  text-transform: uppercase;
 }
 
 #sidebar h2 {
@@ -111,7 +110,7 @@ code {
 }
 
 /* References */
-#content {
+#content, .overview {
   padding: 20px;
   padding-left: 260px;
   max-width: 700px;
