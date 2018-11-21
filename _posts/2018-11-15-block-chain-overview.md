@@ -55,3 +55,39 @@ exceeds the value of its inputs, the transaction is invalid and will be rejected
 If the value of a transactions inputs exceeds the value of its outputs, the
 difference will be claimed by as a [mining fee]() by the miner who includes the
 transaction into a block.
+
+### Block Encoding
+
+![Block Binary Encoding](https://s3-us-west-2.amazonaws.com/elixium-assets/Encoded_Block.svg)
+
+Block headers are 218 bytes total. Blocks are encoded into binary format when
+they are stored on disk, and having a fixed-size header is necessary for enforcing
+a [maximum block size limit](); if header size is constant, it is easy to deduce
+the remaining capacity for transaction data within a given block.
+
+Blocks are encoded in the same way as the above image, where each attribute is
+combined together with no separating flags. This is because there is an order
+in which blocks must be encoded; index, hash, previous hash, merkle root, timestamp,
+nonce, difficulty, version, followed by transaction data.
+
+The block index is represented as 4 bytes, which provides a maximum possible
+index of 4294967295. At an average of 2 minutes per block, it would take 16,343
+years to reach the  maximum index, therefore 4 bytes is more than enough to
+represent index.
+
+Hash, previous hash, and merkle root are all 64 bytes, as the result of SHA256
+provides us a 64 byte hash.
+
+Timestamp is 4 bytes, which successfully represents a UTC unix timestamp.
+
+Nonce values will always be an integer. We only use 8 bytes (representing up to
+the integer 18446744073709551615) to represent a nonce -- if a nonce lapses over
+8 bytes, a miner can allow it to overflow and instead update the blocks timestamp.
+
+The maximum value for difficulty can be 16^64, and difficulty can not be negative.
+Difficulty is stored in 8 bytes according to the [IEEE float]() specification.
+
+The block version is stored in 2 bytes, which allows us to specify up to version
+65535.
+
+All data following these fields is treated as transaction data.
