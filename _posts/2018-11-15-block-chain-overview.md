@@ -36,7 +36,7 @@ using the same output as an input in multiple transactions is invalid as this is
 an attempt to spend the same elixir; this is classified as a [double spend]().
 
 Outputs are directly tied to the transaction they are created in -- each output
-has a TXOID which is the hash of the output followed by its index in the transaction's
+has a TXOID which ID of the transaction followed by its index in the transaction's
 outputs. An output that is at index 5 of the output list within a transaction
 with the hash "9B96A1FE1D548CBBC960CC6A0286668" would have the TXOID of
 "9B96A1FE1D548CBBC960CC6A0286668:5".
@@ -75,8 +75,8 @@ index of 4294967295. At an average of 2 minutes per block, it would take 16,343
 years to reach the  maximum index, therefore 4 bytes is more than enough to
 represent index.
 
-Hash, previous hash, and merkle root are all 64 bytes, as the result of SHA256
-provides us a 64 byte hash.
+Hash, previous hash, and merkle root are all 32 bytes, as the result of SHA256
+provides us a 32 byte hash.
 
 Timestamp is 4 bytes, which successfully represents a UTC unix timestamp.
 
